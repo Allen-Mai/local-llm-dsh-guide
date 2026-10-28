@@ -1,0 +1,9 @@
+FROM ./Qwen3-8B-Q4_K_M.gguf
+
+# 长上下文变体：用于长文档分析、大代码库
+# 注意：32K 会让 24% 的层溢出到 CPU，速度降到 27-30 tok/s
+PARAMETER temperature 0.6
+PARAMETER top_p 0.95
+PARAMETER top_k 20
+PARAMETER repeat_penalty 1.05
+PARAMETER num_ctx 32768

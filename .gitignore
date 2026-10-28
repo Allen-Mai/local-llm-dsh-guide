@@ -1,0 +1,10 @@
+# Ollama
+*.gguf
+models/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# PowerShell
+*.ps1.bak

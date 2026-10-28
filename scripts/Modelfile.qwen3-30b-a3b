@@ -1,0 +1,12 @@
+FROM ./Qwen3-30B-A3B-Instruct-2507-IQ4_XS.gguf
+
+# Qwen3-30B-A3B-Instruct-2507 (MoE, 30B total / 3B active)
+# Official recommended sampling params for the 2507 instruct release
+PARAMETER temperature 0.7
+PARAMETER top_p 0.8
+PARAMETER top_k 20
+PARAMETER repeat_penalty 1.05
+
+# 8GB VRAM + 32GB RAM: MoE weights live mostly in RAM, KV cache in VRAM
+# 16384 balances context vs memory pressure
+PARAMETER num_ctx 16384
